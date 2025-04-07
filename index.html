@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        /* Header Image */
+        header {
+            background-image: url('department-image.jpg'); /* Image Path in the "index" folder */
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjust height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        /* Live clock style */
+        #clock {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .department {
+            background-color: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .department h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .department p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Modern animated button style */
+        .department button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .department button:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.4);
+            transition: all 0.5s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        .department button:hover {
+            background-color: #0056b3;
+        }
+        .department button:hover:before {
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+        .department button:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Wontec Lanka Dashboard</h1>
+    </header>
+
+    <!-- Live Clock positioned here -->
+    <div id="clock"></div>
+
+    <div class="container">
+        <div class="department">
+            <h2>Sales Department</h2>
+            <p>The Sales Department is responsible for increasing sales, maintaining customer relationships, and supporting the service process.</p>
+            <button onclick="location.href='sales.html'">Learn More</button>
+        </div>
+
+        <div class="department">
+            <h2>Engineering Department</h2>
+            <p>The Engineering Department is responsible for designing, developing, and maintaining products and systems, ensuring technical solutions meet quality and performance standards.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="department">
+            <h2>Finance Department</h2>
+            <p>The Finance Department manages the organization’s financial activities, including budgeting, forecasting, financial reporting, and ensuring compliance with financial regulations.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="department">
+            <h2>After Sales Department</h2>
+            <p>The After Sales Department ensures customer satisfaction post-purchase by providing support, handling inquiries, managing warranties, and resolving issues related to products and services.</p>
+            <button>Learn More</button>
+        </div>
+
+            <div class="department">
+            <h2>IT Department</h2>
+            <p>The IT Department is responsible for managing and maintaining the organization’s technology infrastructure, ensuring system security, providing technical support, and optimizing digital resources.</p>
+            <button>Learn More</button>
+        </div>
+            <div class="department">
+            <h2>Department Stores</h2>
+            <p>A Solar Store specializes in the sale of solar energy products, including solar panels, inverters, batteries, and related accessories, offering sustainable energy solutions for homes and businesses.</p>
+            <button>Learn More</button>
+        </div>
+
+    </div>
+
+
+    </div>
+     
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const date = now.toLocaleDateString();
+
+            document.getElementById('clock').textContent = `${date} ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initialize immediately
+    </script>
+</body>
+</html>
